@@ -1,0 +1,19 @@
+[project]
+name = "awsssoreporting"
+version = "0.2"
+authors = [
+  { name="Jeff Maley", email="jeffmaley@gmail.com" },
+]
+description = "This tool will report on identities and access in AWS IAM Identity Center"
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/jeffmaley/awsssoreporting"
+"Bug Tracker" = "https://github.com/jeffmaley/awsssoreporting/issues"

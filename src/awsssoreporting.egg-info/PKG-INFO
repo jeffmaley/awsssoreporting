@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: awsssoreporting
+Version: 0.2
+Summary: This tool will report on identities and access in AWS IAM Identity Center
+Author-email: Jeff Maley <jeffmaley@gmail.com>
+License: # MIT License
+        
+        MIT License
+        
+        Copyright (c) 2023 Jeff Maley
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Homepage, https://github.com/jeffmaley/awsssoreporting
+Project-URL: Bug Tracker, https://github.com/jeffmaley/awsssoreporting/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# awsssoreporting.py
+
+## Description
+
+AWS IAM Identity Center (FKA AWS SSO) connects an IdP to an AWS Organization. Identities are granted access (in the form of Permission Sets) to accounts. The combined identity/permission set/account binding is called an *assignment*. It is challenging to use the AWS Console to generate a report of all granted access. This package provides a way of reporting this access to the terminal or a CSV.
+
+## Usage
+
+awsssoreporting.py \[-a | -u\] -c -f myfile.csv -q
+* -a  Report access by AWS account
+* -u  Report access by identity
+* -c  Write the results to a CSV
+* -f  The filename to write the CSV to. Otherwise, the default (aws_sso_reporting-\<date\>.csv) is used
+* -q  Quite mode. No results printed to terminal. The default is False.

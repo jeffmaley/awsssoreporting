@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+src/awsssoreporting/__init__.py
+src/awsssoreporting/__main__.py
+src/awsssoreporting.egg-info/PKG-INFO
+src/awsssoreporting.egg-info/SOURCES.txt
+src/awsssoreporting.egg-info/dependency_links.txt
+src/awsssoreporting.egg-info/top_level.txt
