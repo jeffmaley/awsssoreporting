@@ -7,8 +7,8 @@ AWS IAM Identity Center (FKA AWS SSO) connects an IdP to an AWS Organization. Id
 ## Usage
 
 awsssoreporting.py \[-a | -u\] -c -f myfile.csv -q
-* -a - Report access by AWS account
-* -u - Report access by identity
-* -c - Write the results to a CSV
-* -f - The filename to write the CSV to. Otherwise, the default (aws_sso_reporting-<date>.csv) is used
-* -q - Quite mode. No results printed to terminal. The default is False.
+* -a  Report access by AWS account
+* -u  Report access by identity
+* -c  Write the results to a CSV
+* -f  The filename to write the CSV to. Otherwise, the default (aws_sso_reporting-\<date\>.csv) is used
+* -q  Quite mode. No results printed to terminal. The default is False.
