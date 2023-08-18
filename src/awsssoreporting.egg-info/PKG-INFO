@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: awsssoreporting
-Version: 0.2
+Version: 0.8
 Summary: This tool will report on identities and access in AWS IAM Identity Center
 Author-email: Jeff Maley <jeffmaley@gmail.com>
 License: # MIT License
@@ -9,7 +9,7 @@ License: # MIT License
         
         Copyright (c) 2023 Jeff Maley
         
-        Permission is hereby granted, free of charge, to any person obtaining a copy
+        Permsssion is hereby granted, free of charge, to any person obtaining a copy
         of this software and associated documentation files (the "Software"), to deal
         in the Software without restriction, including without limitation the rights
         to use, copy, modify, merge, publish, distribute, sublicense, and/or sell

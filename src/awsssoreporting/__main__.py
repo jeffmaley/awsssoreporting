@@ -11,6 +11,7 @@ It supports the following parameters:
 """
 
 
+import os
 import boto3
 import botocore
 import argparse
@@ -145,8 +146,7 @@ def list_accounts(org_client: botocore.client) -> str:
 
 
 def list_account_assignments(sso_client: botocore.client, instance_arn: str, account_id: str, permission_set_arn: str) -> dict:
-    client = boto3.client("sso-admin", region_name="us-east-1")
-    response = client.list_account_assignments(
+    response = sso_client.list_account_assignments(
         InstanceArn=instance_arn,
         AccountId=account_id,
         PermissionSetArn=permission_set_arn
@@ -283,13 +283,31 @@ def write_csv(args, filename, content_objs) -> None:
 def main(args):
     if args.by_user and args.by_account:
         logger.error("Parameter error: cannot specify both by_user and by_account")
+        print("Parameter error: cannot specify both by_user and by_account")
+        exit(1)
+
+    if not args.by_user and not args.by_account:
+        print("Please select either -by_user or by_account")
         exit(1)
 
     config = Config()
 
-    sso_client = boto3.client("sso-admin", region_name="us-east-1")
-    identity_store_client = boto3.client("identitystore", region_name="us-east-1")
-    org_client = boto3.client("organizations", region_name="us-east-1")
+    try:
+        aws_region = os.environ["AWS_DEFAULT_REGION"]
+    except KeyError:
+        logger.error("Please set AWS_DEFAULT_REGION with the region AWS IAM Identity Center is configured in.")
+        print("Please set AWS_DEFAULT_REGION with the region AWS IAM Identity Center is configured in.")
+        exit(1)
+    try:
+        aws_profile = os.environ["AWS_PROFILE"]
+    except KeyError:
+        logger.info("Using the default AWS profile")
+        print("Using the default AWS profile")
+        aws_profile=None
+    boto3_session = boto3.Session(profile_name=aws_profile, region_name=aws_region)
+    sso_client = boto3_session.client("sso-admin", region_name=aws_region)
+    identity_store_client = boto3_session.client("identitystore", region_name=aws_region)
+    org_client = boto3_session.client("organizations", region_name=aws_region)
 
     instance_arn, identity_store_id = list_instances(sso_client)
     users = list_users(identity_store_client, identity_store_id)
