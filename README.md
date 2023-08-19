@@ -4,7 +4,16 @@
 
 AWS IAM Identity Center (FKA AWS SSO) connects an IdP to an AWS Organization. Identities are granted access (in the form of Permission Sets) to accounts. The combined identity/permission set/account binding is called an *assignment*. It is challenging to use the AWS Console to generate a report of all granted access. This package provides a way of reporting this access to the terminal or a CSV.
 
+## Installation
+
+python3 -m pip install awsssoreporting
+
 ## Usage
+
+Because this utility uses the AWS IAM Identity Center and Organization APIs, it must be run from the Organization management account.
+
+export AWS_PROFILE=<your AWS profile>
+export AWS_DEFALT_REGION=<region AWS Identity Center is configured in>
 
 awsssoreporting.py \[-a | -u\] -c -f myfile.csv -q
 * -a  Report access by AWS account
