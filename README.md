@@ -6,15 +6,17 @@ AWS IAM Identity Center (FKA AWS SSO) connects an IdP to an AWS Organization. Id
 
 ## Installation
 
-python3 -m pip install boto3
-python3 -m pip install awsssoreporting
+`python3 -m pip install boto3`
+
+`python3 -m pip install awsssoreporting`
 
 ## Usage
 
 Because this utility uses the AWS IAM Identity Center and Organization APIs, it must be run from the Organization management account.
 
-export AWS_PROFILE=<your AWS profile. This must have read access to the sso-admin, identitystore, and organizations API.>
-export AWS_DEFALT_REGION=<region AWS Identity Center is configured in>
+`export AWS_PROFILE=<your AWS profile. This must have read access to the sso-admin, identitystore, and organizations API.>`
+
+`export AWS_DEFALT_REGION=<region AWS Identity Center is configured in>`
 
 awsssoreporting.py \[-a | -u\] -c -f myfile.csv -q
 * -a  Report access by AWS account
