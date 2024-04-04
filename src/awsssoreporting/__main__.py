@@ -280,7 +280,14 @@ def write_csv(args, filename, content_objs) -> None:
     return
 
 
-def main(args):
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-a", "--by_account", action="store_true")
+    parser.add_argument("-u", "--by_user", action="store_true")
+    parser.add_argument("-c", "--csv", action="store_true")
+    parser.add_argument("-f", "--output_file")
+    parser.add_argument("-q", "--quiet_mode", action="store_true", default=False)
+    args = parser.parse_args()
     if args.by_user and args.by_account:
         logger.error("Parameter error: cannot specify both by_user and by_account")
         print("Parameter error: cannot specify both by_user and by_account")
@@ -363,11 +370,4 @@ def main(args):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-a", "--by_account", action="store_true")
-    parser.add_argument("-u", "--by_user", action="store_true")
-    parser.add_argument("-c", "--csv", action="store_true")
-    parser.add_argument("-f", "--output_file")
-    parser.add_argument("-q", "--quiet_mode", action="store_true", default=False)
-    args = parser.parse_args()
-    main(args)
+    main()

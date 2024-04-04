@@ -1,6 +1,6 @@
 [project]
 name = "awsssoreporting"
-version = "0.9"
+version = "0.12"
 authors = [
   { name="Jeff Maley", email="jeffmaley@gmail.com" },
 ]

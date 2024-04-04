@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: awsssoreporting
-Version: 0.12
+Version: 0.10
 Summary: This tool will report on identities and access in AWS IAM Identity Center
 Author-email: Jeff Maley <jeffmaley@gmail.com>
 License: # MIT License
@@ -35,7 +35,6 @@ Classifier: Operating System :: OS Independent
 Requires-Python: >=3.7
 Description-Content-Type: text/markdown
 License-File: LICENSE
-Requires-Dist: boto3
 
 # awsssoreporting.py
 
