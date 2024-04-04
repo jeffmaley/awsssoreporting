@@ -1,0 +1,16 @@
+{
+  "version": "2.2.0",
+  "summary": {
+    "title": "awsssoreporting",
+    "owner": "jeff maley",
+    "description": "reports on aws sso",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [],
+    "diagramTop": 0,
+    "reviewer": "",
+    "threatTop": 0
+  }
+}
